@@ -8,7 +8,15 @@ function Login() {
     e.preventDefault();
     console.log("usuario:", usuario, "password:", password)
 
-  }
+    if (usuario === "jenifer" && password === "1234") {
+      const token = "abc123";
+      localStorage.setItem("token", token); 
+      alert("¡Inicio de sesión exitoso!");
+    } else {
+      alert("Credenciales incorrectas.");
+    }
+  };
+
   return (
     <div className="">
       <h2>Iniciar sesión</h2>
