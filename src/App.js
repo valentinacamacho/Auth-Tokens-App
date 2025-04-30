@@ -1,32 +1,12 @@
-import React, { useState, useEffect, use } from "react";
-import Login from "./pages/Login"
-import Dashboard from "./pages/Dashboard";
+import React from "react";
+import Login from "./components/Login";
 
 function App() {
-  const [autenticado, setAutenticado] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setAutenticado(true);
-    }
-  }, []);
-
-  const manejarLogin = () => {
-    setAutenticado(true);
-  };
-
-  const manejarLogout = () => {
-    setAutenticado(false);
-  };
 
   return (
     <div className="App">
-      {autenticado ? (
-        <Dashboard  onLogout={manejarLogin}/>
-       ) : ( 
-       <Login onLogout={manejarLogout}/>
-      ) }
+      <h1>Mi app de autenticación</h1>
+      <Login/>
     </div>
   );
 }
